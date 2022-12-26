@@ -22,6 +22,7 @@ class Order(models.Model):
     discount = models.IntegerField(default=0,
         validators=[MinValueValidator(0),
             MaxValueValidator(100)])
+    braintree_id = models.CharField(max_length=150,blank=True)
     class Meta:
         ordering = ['-created']
         indexes = [
